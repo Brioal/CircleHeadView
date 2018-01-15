@@ -14,7 +14,10 @@
 	}
 	
 ```
-## Step 2. Add the dependency
+## Step 2. Add the dependency [![](https://jitpack.io/v/Brioal/CircleHeadView.svg)](https://jitpack.io/#Brioal/CircleHeadView)
+
+
+
 ```
 	dependencies {
 	        compile 'com.github.Brioal:CircleHeadView:1.0'
