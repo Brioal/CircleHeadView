@@ -1,9 +1,10 @@
 # CircleHeadView
-#圆形文字随即背景头像
+## 圆形文字随即背景头像
 ![](https://github.com/Brioal/CircleHeadView/blob/master/art/device-2016-08-22-200908.png)
-#使用方法
-#Step 1. Add the JitPack repository to your build file
-##Add it in your root build.gradle at the end of repositories:
+## 使用方法
+## Step 1. Add the JitPack repository to your build file
+### Add it in your root build.gradle at the end of repositories:
+
 ```
 	allprojects {
 		repositories {
@@ -13,7 +14,7 @@
 	}
 	
 ```
-##Step 2. Add the dependency
+## Step 2. Add the dependency
 ```
 	dependencies {
 	        compile 'com.github.Brioal:CircleHeadView:1.0'

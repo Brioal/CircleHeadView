@@ -38,10 +38,10 @@ public class CircleHead extends View {
         mTextColor = array.getColor(R.styleable.CircleHead_circlr_head_text_color, Color.WHITE);
         isRandom = array.getBoolean(R.styleable.CircleHead_circlr_head_israndom, false);
         array.recycle();
-        init();
+        build();
     }
 
-    private void init() {
+    private void build() {
         mPaintBack = new Paint();
         mPaintBack.setAntiAlias(true);
         mPaintBack.setDither(true);
@@ -50,33 +50,36 @@ public class CircleHead extends View {
             mBackColor = getRandomColor(); //产生随机颜色
         }
         mPaintBack.setColor(mBackColor);
-
         mPaintText = new Paint();
         mPaintText.setAntiAlias(true);
         mPaintText.setDither(true);
         mPaintText.setColor(mTextColor);
-
-    }
-
-    //设置文字
-    public void setmText(String mText) {
-        this.mText = mText;
         invalidate();
     }
 
+    //设置文字
+    public CircleHead setText(String mText) {
+        this.mText = mText;
+        build();
+        return this;
+    }
+
     //设置背景颜色
-    public void setBackColor(int backColor) {
-        mBackColor = backColor;
+    public CircleHead setBackColor(int backColor) {
+        mBackColor = backColor;build();
+        return this;
     }
 
     //设置文字颜色
-    public void setTextColor(int textColor) {
-        mTextColor = textColor;
+    public CircleHead setTextColor(int textColor) {
+        mTextColor = textColor;build();
+        return this;
     }
 
     //设置是否开启随机颜色
-    public void setRandom(boolean isRandom) {
-        this.isRandom = isRandom;
+    public CircleHead setRandom(boolean isRandom) {
+        this.isRandom = isRandom;build();
+        return this;
     }
 
     public int getRandomColor() {
@@ -97,13 +100,17 @@ public class CircleHead extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        canvas.drawCircle(mWidth / 2, mHeight / 2, mRadius, mPaintBack); //绘制外圆
-        mPaintText.setTextSize(mRadius - 20); //自动设置字体大小
-        Paint.FontMetrics metrics = mPaintText.getFontMetrics();
-        float textWidth = mPaintText.measureText(mText); //获取字体的宽度
-        float textHeight = metrics.bottom - metrics.top; //获取字体的高度
-        float offsetWidth = (textWidth) / 2; //计算快递便宜
-        float offsetHeight = mWidth / 2 - (metrics.bottom - (textHeight - mWidth) / 2); //计算高度偏移
-        canvas.drawText(mText, mWidth / 2 - offsetWidth, mHeight / 2 + offsetHeight, mPaintText); //绘制文字
+        //清空原有
+        if (mText != null && !mText.equals("")) {
+
+            canvas.drawCircle(mWidth / 2, mHeight / 2, mRadius, mPaintBack); //绘制外圆
+            mPaintText.setTextSize(mRadius - 20); //自动设置字体大小
+            Paint.FontMetrics metrics = mPaintText.getFontMetrics();
+            float textWidth = mPaintText.measureText(mText); //获取字体的宽度
+            float textHeight = metrics.bottom - metrics.top; //获取字体的高度
+            float offsetWidth = (textWidth) / 2; //计算快递便宜
+            float offsetHeight = mWidth / 2 - (metrics.bottom - (textHeight - mWidth) / 2); //计算高度偏移
+            canvas.drawText(mText, mWidth / 2 - offsetWidth, mHeight / 2 + offsetHeight, mPaintText); //绘制文字
+        }
     }
 }
