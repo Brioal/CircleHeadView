@@ -3,8 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CircleHeadView.iml" filepath="$PROJECT_DIR$/CircleHeadView.iml" />
+      <module fileurl="file://C:\Android\Projects\CircleHeadView\CircleHeadView.iml" filepath="C:\Android\Projects\CircleHeadView\CircleHeadView.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Android\Projects\CircleHeadView\app\app.iml" filepath="C:\Android\Projects\CircleHeadView\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/circlehead/circlehead.iml" filepath="$PROJECT_DIR$/circlehead/circlehead.iml" />
+      <module fileurl="file://C:\Android\Projects\CircleHeadView\circlehead\circlehead.iml" filepath="C:\Android\Projects\CircleHeadView\circlehead\circlehead.iml" />
     </modules>
   </component>
 </project>
