@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mCircleHead = findViewById(R.id.main_head);
         //测试设置
-        mCircleHead.setBackColor(Color.RED).setTextColor(Color.YELLOW).setText("测");
+        mCircleHead.setText("A");
+        mCircleHead.setRandom(true);
+        mCircleHead.setBackColor(Color.RED).setTextColor(Color.YELLOW);
     }
 }

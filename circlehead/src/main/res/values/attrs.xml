@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <declare-styleable name="CircleHead">
-        <attr name="circle_head_text" format="string"/>
-        <attr name="circlr_head_back" format="color"/>
-        <attr name="circlr_head_text_color" format="color"/>
-        <attr name="circlr_head_israndom" format="boolean"/>
-    </declare-styleable>
-</resources>
