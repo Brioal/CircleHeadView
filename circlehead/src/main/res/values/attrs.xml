@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircleHead">
+        <attr name="back_color" format="reference"/>
+        <attr name="random" format="boolean"/>
+    </declare-styleable>
+</resources>
