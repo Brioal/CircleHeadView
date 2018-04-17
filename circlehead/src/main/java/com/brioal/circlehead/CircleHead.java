@@ -3,6 +3,7 @@ package com.brioal.circlehead;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.ShapeDrawable;
 import android.support.v4.widget.TextViewCompat;
@@ -17,7 +18,7 @@ import java.util.regex.Matcher;
  */
 public class CircleHead extends android.support.v7.widget.AppCompatTextView {
     // 是否随机颜色
-    private boolean isRandom = true;
+    private boolean isRandom = false;
     private Random random;
     // 背景颜色
     private int mBackColor;
@@ -44,13 +45,15 @@ public class CircleHead extends android.support.v7.widget.AppCompatTextView {
         // 设置背景颜色
         setBackgroundResource(R.drawable.shape_drawable);
         GradientDrawable drawable = (GradientDrawable) getBackground();
-        drawable.setColor(mBackColor);
+        drawable.setColor(Color.YELLOW);
+        setBackgroundDrawable(drawable);
     }
 
 
     //设置背景颜色
     public CircleHead setBackColor(int backColor) {
         mBackColor = backColor;
+        isRandom = false;
         build();
         return this;
     }
