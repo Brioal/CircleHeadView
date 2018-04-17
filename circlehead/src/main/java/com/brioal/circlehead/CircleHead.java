@@ -2,6 +2,7 @@ package com.brioal.circlehead;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
@@ -23,14 +24,33 @@ public class CircleHead extends android.support.v7.widget.AppCompatTextView {
     // 背景颜色
     private int mBackColor;
 
+    private Context mContext;
+
     public CircleHead(Context context) {
         this(context, null);
     }
 
     public CircleHead(Context context, AttributeSet attrs) {
         super(context, attrs);
-        random = new Random();
+        mContext = context;
+        init(attrs);
         build();
+    }
+
+    /**
+     * 初始化设置
+     */
+    private void init(AttributeSet attrs) {
+        // 初始化随机数
+        random = new Random();
+        // 获取参数
+        TypedArray array = mContext.obtainStyledAttributes(attrs, R.styleable.CircleHead);
+        // 获取是否随机背景
+        isRandom = array.getBoolean(R.styleable.CircleHead_random, false);
+        // 获取背景颜色
+        mBackColor = array.getColor(R.styleable.CircleHead_back_color, Color.BLUE);
+        array.recycle();
+
     }
 
     @SuppressLint("RestrictedApi")
@@ -45,7 +65,7 @@ public class CircleHead extends android.support.v7.widget.AppCompatTextView {
         // 设置背景颜色
         setBackgroundResource(R.drawable.shape_drawable);
         GradientDrawable drawable = (GradientDrawable) getBackground();
-        drawable.setColor(Color.YELLOW);
+        drawable.setColor(mBackColor);
         setBackgroundDrawable(drawable);
     }
 
